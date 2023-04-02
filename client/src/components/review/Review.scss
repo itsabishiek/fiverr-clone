@@ -1,0 +1,58 @@
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px 0px;
+
+  .user {
+    display: flex;
+    align-items: center;
+
+    .pp {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .country {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: gray;
+      margin-top: 5px;
+
+      img {
+        width: 20px;
+      }
+    }
+  }
+
+  .stars {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    img {
+      height: 14px;
+      width: 14px;
+    }
+
+    span {
+      font-size: 14px;
+      font-weight: bold;
+      color: #ffc108;
+      padding-top: 2.5px;
+    }
+  }
+
+  .helpful {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    img {
+      width: 14px;
+      cursor: pointer;
+    }
+  }
+}
