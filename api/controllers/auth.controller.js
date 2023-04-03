@@ -18,20 +18,16 @@ const register = async (req, res, next) => {
         id: newUser.id,
         isSeller: newUser.isSeller,
       },
-      process.env.JWT_KEY,
-      {
-        expiresIn: "30d",
-      }
+      process.env.JWT_KEY
     );
 
     const { password, ...info } = newUser._doc;
-    res
-      .cookie("accessToken", token, {
-        httpOnly: true,
-        domain: "https://fiverrrrr.vercel.app",
-      })
-      .status(200)
-      .send(info);
+    res.cookie("accessToken", token, {
+      httpOnly: true,
+      sameSite: "lax",
+    });
+
+    return res.status(200).json({ info, token });
   } catch (error) {
     next(error);
   }
@@ -53,20 +49,16 @@ const login = async (req, res, next) => {
         id: user._id,
         isSeller: user.isSeller,
       },
-      process.env.JWT_KEY,
-      {
-        expiresIn: "30d",
-      }
+      process.env.JWT_KEY
     );
 
     const { password, ...info } = user._doc;
-    res
-      .cookie("accessToken", token, {
-        httpOnly: true,
-        domain: "https://fiverrrrr.vercel.app",
-      })
-      .status(200)
-      .send(info);
+    res.cookie("accessToken", token, {
+      httpOnly: true,
+      sameSite: "lax",
+    });
+
+    return res.status(200).json({ info, token });
   } catch (error) {
     next(error);
   }

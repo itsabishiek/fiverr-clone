@@ -16,7 +16,7 @@ const Login = () => {
         username,
         password,
       });
-      localStorage.setItem("currentUser", JSON.stringify(res.data));
+      localStorage.setItem("currentUser", JSON.stringify(res.data.info));
 
       navigate("/");
     } catch (err) {
