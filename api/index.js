@@ -26,7 +26,12 @@ const connect = async () => {
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: "https://fiverrrrr.vercel.app", credentials: true }));
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://fiverrrrr.vercel.app"],
+    credentials: true,
+  })
+);
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);

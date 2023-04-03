@@ -41,7 +41,7 @@ const Register = () => {
         ...user,
         img: url,
       });
-      localStorage.setItem("currentUser", JSON.stringify(res.data.info));
+      localStorage.setItem("currentUser", JSON.stringify(res.data));
 
       navigate("/");
     } catch (error) {

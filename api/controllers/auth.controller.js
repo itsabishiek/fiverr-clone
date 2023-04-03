@@ -22,12 +22,14 @@ const register = async (req, res, next) => {
     );
 
     const { password, ...info } = newUser._doc;
-    res.cookie("accessToken", token, {
-      httpOnly: true,
-      sameSite: "lax",
-    });
-
-    return res.status(200).json({ info, token });
+    res
+      .cookie("accessToken", token, {
+        httpOnly: true,
+        secure: true,
+        sameSite: "none",
+      })
+      .status(200)
+      .send(info);
   } catch (error) {
     next(error);
   }
@@ -53,12 +55,14 @@ const login = async (req, res, next) => {
     );
 
     const { password, ...info } = user._doc;
-    res.cookie("accessToken", token, {
-      httpOnly: true,
-      sameSite: "lax",
-    });
-
-    return res.status(200).json({ info, token });
+    res
+      .cookie("accessToken", token, {
+        httpOnly: true,
+        secure: true,
+        sameSite: "none",
+      })
+      .status(200)
+      .send(info);
   } catch (error) {
     next(error);
   }
