@@ -28,6 +28,7 @@ const register = async (req, res, next) => {
     res
       .cookie("accessToken", token, {
         httpOnly: true,
+        domain: "https://fiverrrrr.vercel.app",
       })
       .status(200)
       .send(info);
@@ -62,6 +63,7 @@ const login = async (req, res, next) => {
     res
       .cookie("accessToken", token, {
         httpOnly: true,
+        domain: "https://fiverrrrr.vercel.app",
       })
       .status(200)
       .send(info);
