@@ -17,7 +17,7 @@ const Success = () => {
 
         setTimeout(() => {
           navigate("/orders");
-        }, 4000);
+        }, 44000);
       } catch (error) {
         console.log(error);
       }
@@ -29,12 +29,29 @@ const Success = () => {
   return (
     <div
       style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: "20px",
         padding: "100px 0px",
         fontSize: "18px",
         color: "#1dbf73",
         textAlign: "center",
       }}
     >
+      <div
+        style={{
+          border: "2px solid #1dbf73",
+          padding: 8,
+          borderRadius: "50%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <img src="./img/greencheck.png" alt="" />
+      </div>
       Payment successful. You are being redirected to the orders page. Please do
       not close the page
     </div>
