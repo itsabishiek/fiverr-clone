@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
 
-const Success = () => {
+const Confirm = () => {
   const { search } = useLocation();
   const navigate = useNavigate();
   const params = new URLSearchParams(search);
@@ -58,4 +58,4 @@ const Success = () => {
   );
 };
 
-export default Success;
+export default Confirm;

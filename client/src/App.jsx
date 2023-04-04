@@ -15,7 +15,7 @@ import Gig from "./pages/gig/Gig";
 import Register from "./pages/register/Register";
 import Login from "./pages/login/Login";
 import Pay from "./pages/pay/Pay";
-import Success from "./pages/success/Success";
+import Confirm from "./pages/confirm/Confirm";
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -74,8 +74,8 @@ const App = () => {
           element: <Pay />,
         },
         {
-          path: "/success",
-          element: <Success />,
+          path: "/confirm",
+          element: <Confirm />,
         },
       ],
     },
