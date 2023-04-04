@@ -17,7 +17,7 @@ const Success = () => {
 
         setTimeout(() => {
           navigate("/orders");
-        }, 44000);
+        }, 4000);
       } catch (error) {
         console.log(error);
       }
